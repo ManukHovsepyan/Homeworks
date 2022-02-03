@@ -133,3 +133,62 @@ Array.prototype.myreduce = function (arg, val) {
     // isogram
     let isIsogram = (str) => str.split("").every((c, i) => str.indexOf(c) == i);
     console.log(isIsogram("ad 2"))
+
+    
+    //lodash
+
+
+    // intersect
+    function intersect(a, b) {
+        let setB = new Set(b);
+        return [...new Set(a)].filter(x => setB.has(x));
+    }
+    console.log(intersect(a,arr))
+
+    //pull
+    let b = ["a","a","b"]
+    function pull(arr, values) {
+        for(let i = 0; i < values.length; i++)
+        {
+            while(arr.indexOf(values[i]) !== -1)
+            {
+                let index = arr.indexOf(values[i]);
+                arr.splice(index, 1);
+            }
+        }
+        return arr;
+    }
+    console.log(pull(b,"a"))
+
+    //tail
+    let c = [1,2,3]
+    const tail = (array) =>{
+        let t = [];
+        for(let i = 1; i < array.length; i++)
+        {
+            t.push(array[i]);
+        }    
+        return t;
+    }
+    console.log(tail(c))
+    
+    //take
+
+    const take = (array,take) =>{
+        let arr = [];
+        if(take > array.length)
+        {
+            take = array.length;
+        }
+        if(take < 0)
+        {
+            take = 0;
+        }
+        for(let i = 0; i< take; i++)
+        {
+            arr.push(array[i]);
+        }
+        return arr;
+      }
+      let d = [1,2,3]
+    console.log(take(d,0))
